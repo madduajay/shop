@@ -1,0 +1,41 @@
+// Disposable headless UI verification. No personal browser profile or cookie writes.
+const fs=require('node:fs'),os=require('node:os'),path=require('node:path'),cp=require('node:child_process');
+const base=process.argv[2],out=process.argv[3];if(!/^https:\/\/jacket\.localhost:854[35]$/.test(base))throw Error('Local demo only');
+const allowed=new Set([base,base.replace('atlas.','jacket.')]);const dir=fs.mkdtempSync(path.join(os.tmpdir(),'thread3-ui-check-'));let chrome,ws,id=0,sid;const pending=new Map();
+const delay=ms=>new Promise(r=>setTimeout(r,ms));
+function cmd(method,params={},session=sid){return new Promise((resolve,reject)=>{const n=++id,timer=setTimeout(()=>reject(Error(method+' timeout')),30000);pending.set(n,{resolve,reject,timer});ws.send(JSON.stringify({id:n,method,params,...(session?{sessionId:session}:{})}))})}
+async function ev(expression,session=sid){const r=await cmd('Runtime.evaluate',{expression,awaitPromise:true,returnByValue:true,userGesture:true},session);if(r.exceptionDetails)throw Error('UI evaluation failed');return r.result.value}
+async function until(expression){for(let i=0;i<300;i++){if(await ev(expression))return;await delay(100)}throw Error('UI state timeout')}
+async function chat(text){const before=await ev("document.querySelectorAll('.assistant').length");await ev(`(()=>{document.querySelector('#text').value=${JSON.stringify(text)};document.querySelector('#chat').requestSubmit()})()`);if(text.startsWith('switch to customer'))await until("document.querySelector('#text').value==='' && document.querySelector('#identity').textContent.includes('"+text.split(' ').at(-1).padStart(3,'0')+"')");else await until(`document.querySelectorAll('.assistant').length>${before} && document.querySelector('#status').textContent===''`);return ev("({reply:[...document.querySelectorAll('.assistant')].at(-1)?.textContent,identity:document.querySelector('#identity').textContent,cards:[...document.querySelectorAll('.card')].map(e=>({name:e.querySelector('h3').textContent,explanation:e.querySelector('.explanation').textContent,source:[...e.querySelectorAll('small')].at(-1).textContent}))})")}
+async function shot(name){await ev(name.includes('explanations')?"[...document.querySelectorAll('.cards')].at(-1).scrollIntoView({block:'start'})":"document.querySelector('#messages').scrollIntoView({block:'start'})");await delay(200);const x=await cmd('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(out,name),Buffer.from(x.data,'base64'))}
+(async()=>{const report=[];try{
+ chrome=cp.spawn('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',['--headless=new','--remote-debugging-port=0','--user-data-dir='+dir,'--no-first-run','--no-default-browser-check','--disable-background-networking','--disable-sync','--disable-extensions','about:blank'],{stdio:'ignore'});
+ let address;for(let i=0;i<100;i++){try{address=fs.readFileSync(path.join(dir,'DevToolsActivePort'),'utf8').trim().split('\n');break}catch{}await delay(100)}
+ ws=new WebSocket('ws://127.0.0.1:'+address[0]+address[1]);await new Promise((r,j)=>{ws.onopen=r;ws.onerror=j});ws.onmessage=({data})=>{const m=JSON.parse(data);if(m.id){const p=pending.get(m.id);if(p){clearTimeout(p.timer);pending.delete(m.id);m.error?p.reject(Error(m.error.message)):p.resolve(m.result)}}};
+ const ctx=(await cmd('Target.createBrowserContext',{},null)).browserContextId;const target=(await cmd('Target.createTarget',{url:'about:blank',browserContextId:ctx},null)).targetId;sid=(await cmd('Target.attachToTarget',{targetId:target,flatten:true},null)).sessionId;
+ await cmd('Page.enable');await cmd('Runtime.enable');await cmd('Emulation.setDeviceMetricsOverride',{width:1180,height:1300,deviceScaleFactor:1,mobile:false});await cmd('Page.navigate',{url:base+'/shop'});await until("!!document.querySelector('header')");
+
+ async function go(route){await cmd('Page.navigate',{url:base+route});await until("document.readyState==='complete' && location.href==="+JSON.stringify(base+route))}
+ async function form(action,values){await ev(`(()=>{const f=document.querySelector(${JSON.stringify(action)});for(const [k,v] of Object.entries(${JSON.stringify(values)}))f.elements[k].value=v;f.requestSubmit()})()`)}
+ async function screen(name){await ev('window.scrollTo(0,0)');await ev("Promise.all([...document.images].filter(i=>i.getBoundingClientRect().top<innerHeight).map(i=>i.decode().catch(()=>{})))");const x=await cmd('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(out,name),Buffer.from(x.data,'base64'))}
+ await go('/shop/product/oxford');await form('article form',{size:'M',quantity:'2'});await until("document.body.dataset.page==='cart'");
+ await go('/shop/product/m-shirts-008');await form('article form',{size:'L',quantity:'1'});await until("document.body.dataset.page==='cart'");
+ if(await ev("document.querySelectorAll('[data-cart-item]').length")!==2)throw Error('Missing multi-item bag');
+ await form('form[data-shop-action=cart-update]',{size:'L',quantity:'3'});await until("!!document.querySelector('[data-cart-item][data-quantity=\"3\"]')");
+ await screen('direct-bag.png');await cmd('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:false});if(await ev('document.documentElement.scrollWidth')>390)throw Error('Mobile overflow');await screen('direct-bag-mobile.png');await cmd('Emulation.setDeviceMetricsOverride',{width:1180,height:1300,deviceScaleFactor:1,mobile:false});
+ await go('/shop/checkout');await ev("document.querySelector('.login-card [data-login-popup]').click()");
+ let popup;for(let i=0;i<60;i++){popup=(await cmd('Target.getTargets',{},null)).targetInfos.find(t=>t.url.startsWith(base+'/shop/login?'));if(popup)break;await delay(100)}if(!popup)throw Error('Popup missing');
+ const ps=(await cmd('Target.attachToTarget',{targetId:popup.targetId,flatten:true},null)).sessionId;
+ await ev("(()=>{const f=document.querySelector('form[data-shop-action=login]');f.elements.email.value='customer001@forme.local';f.elements.password.value='wrong';f.requestSubmit()})()",ps);await delay(400);
+ if(!(await ev("document.body.textContent.includes('Please check')",ps)))throw Error('Login error not displayed');
+ const loginShot=await cmd('Page.captureScreenshot',{format:'png'},ps);fs.writeFileSync(path.join(out,'direct-login.png'),Buffer.from(loginShot.data,'base64'));
+ await ev("(()=>{const f=document.querySelector('form[data-shop-action=login]');f.elements.password.value='wardrobe';f.requestSubmit()})()",ps);
+ await until("document.body.dataset.page==='shipping'");if((await cmd('Target.getTargets',{},null)).targetInfos.some(t=>t.targetId===popup.targetId))throw Error('Popup did not close');
+ await screen('direct-shipping.png');
+ await form('form[data-shop-action=shipping]',{name:'Test Shopper',email:'test@example.test',address:'123 Example Lane',city:'Test City',postal:'12345',country:'US'});await until("document.body.dataset.page==='review'");
+ const total=await ev("Number(document.querySelector('[data-review]').dataset.total)");if(total<=17700)throw Error('Incorrect total');await screen('direct-review.png');
+ await ev("(()=>{const f=document.querySelector('form[data-shop-action=checkout]');f.requestSubmit(f.querySelector('button'))})()");await until("document.body.dataset.page==='receipt'");await screen('direct-receipt.png');
+ const receipt=await ev("document.querySelector('[data-receipt]').textContent");await go('/shop/cart');if(!(await ev("document.body.textContent.includes('Your bag is empty')")))throw Error('Bag not cleared');
+ await go('/shop/account');await screen('direct-account.png');await form('form[data-shop-action=logout]',{});await until("document.body.dataset.page==='catalog' && document.body.dataset.signedIn==='false'");
+ console.log(JSON.stringify({multi_item:true,quantity_and_size_edit:true,mobile_no_overflow:true,wrong_login_rejected:true,popup_closed:true,bag_preserved_through_login:true,shipping:true,review_total:total,receipt,bag_cleared:true,logout:true}));
+ }finally{if(ws){try{await cmd('Browser.close',{},null)}catch{}ws.close()}if(chrome)chrome.kill();await delay(300);fs.rmSync(dir,{recursive:true,force:true})}})().catch(e=>{console.error(e.message);process.exitCode=1});

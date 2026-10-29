@@ -1,0 +1,172 @@
+[
+  {
+    "id": "shirts",
+    "subject": "a men's long-sleeve ivory cotton button-down shirt, spread collar, single breast pocket, real fabric folds",
+    "color": "ivory",
+    "source": "/Users/ajaybabum/Documents/Codex/2026-10-16/task/generated_images/exec-12c4ce68-b4f7-4149-b4bd-d9f6f716d53b.png",
+    "prompt": "Use case: product-mockup. Create one high-end photorealistic ecommerce studio PRODUCT PHOTOGRAPH of a men's long-sleeve ivory cotton button-down shirt, spread collar, single breast pocket, real fabric folds. Full garment alone, centered and entirely visible, natural ghost-mannequin shape without visible mannequin, front view, warm light gray seamless backdrop, subtle soft shadow. Portrait 4:5 composition, garment fills 75 percent of frame. Real woven fibers and seams, convincing textile microtexture, soft diffused daylight. No person, no accessories, no hanger, no typography, no logos, no illustration, no vector art, no collage. This is a representative category photograph for a synthetic clothing store.",
+    "generator": "built-in image_gen",
+    "file": "shirts.png",
+    "served_file": "shirts.jpg"
+  },
+  {
+    "id": "blouses",
+    "subject": "a women's ivory silk blouse, softly draped collar, elegant button front, long sleeves",
+    "color": "ivory",
+    "source": "/Users/ajaybabum/Documents/Codex/2026-10-16/task/generated_images/exec-c0ae003f-eca1-4154-8a62-96ab1bff6c97.png",
+    "prompt": "Use case: product-mockup. Create one high-end photorealistic ecommerce studio PRODUCT PHOTOGRAPH of a women's ivory silk blouse, softly draped collar, elegant button front, long sleeves. Full garment alone, centered and entirely visible, natural ghost-mannequin shape without visible mannequin, front view, warm light gray seamless backdrop, subtle soft shadow. Portrait 4:5 composition, garment fills 75 percent of frame. Real woven fibers and seams, convincing textile microtexture, soft diffused daylight. No person, no accessories, no hanger, no typography, no logos, no illustration, no vector art, no collage. This is a representative category photograph for a synthetic clothing store.",
+    "generator": "built-in image_gen",
+    "file": "blouses.png",
+    "served_file": "blouses.jpg"
+  },
+  {
+    "id": "tees",
+    "subject": "a unisex ivory cotton crew-neck short-sleeve T-shirt, realistic dense cotton jersey and stitched hems",
+    "color": "ivory",
+    "source": "/Users/ajaybabum/Documents/Codex/2026-10-16/task/generated_images/exec-f0dc1210-b8a0-444d-81b6-113d4ae4e0ef.png",
+    "prompt": "Use case: product-mockup. Create one high-end photorealistic ecommerce studio PRODUCT PHOTOGRAPH of a unisex ivory cotton crew-neck short-sleeve T-shirt, realistic dense cotton jersey and stitched hems. Full garment alone, centered and entirely visible, natural ghost-mannequin shape without visible mannequin, front view, warm light gray seamless backdrop, subtle soft shadow. Portrait 4:5 composition, garment fills 75 percent of frame. Real woven fibers and seams, convincing textile microtexture, soft diffused daylight. No person, no accessories, no hanger, no typography, no logos, no illustration, no vector art, no collage. This is a representative category photograph for a synthetic clothing store.",
+    "generator": "built-in image_gen",
+    "file": "tees.png",
+    "served_file": "tees.jpg"
+  },
+  {
+    "id": "knitwear",
+    "subject": "a unisex ivory wool crew-neck sweater, realistic fine ribbed knit texture, long sleeves",
+    "color": "ivory",
+    "source": "/Users/ajaybabum/Documents/Codex/2026-10-16/task/generated_images/exec-9b472fbd-c17d-4664-b0fe-8da4e33ec6b4.png",
+    "prompt": "Use case: product-mockup. Create one high-end photorealistic ecommerce studio PRODUCT PHOTOGRAPH of a unisex ivory wool crew-neck sweater, realistic fine ribbed knit texture, long sleeves. Full garment alone, centered and entirely visible, natural ghost-mannequin shape without visible mannequin, front view, warm light gray seamless backdrop, subtle soft shadow. Portrait 4:5 composition, garment fills 75 percent of frame. Real woven fibers and seams, convincing textile microtexture, soft diffused daylight. No person, no accessories, no hanger, no typography, no logos, no illustration, no vector art, no collage. This is a representative category photograph for a synthetic clothing store.",
+    "generator": "built-in image_gen",
+    "file": "knitwear.png",
+    "served_file": "knitwear.jpg"
+  },
+  {
+    "id": "trousers",
+    "subject": "unisex sand-beige tailored straight-leg cotton trousers, waistband and both complete legs visible",
+    "color": "sand",
+    "source": "/Users/ajaybabum/Documents/Codex/2026-10-16/task/generated_images/exec-8dfff603-d75e-4b4f-bae1-52f31f6f1c18.png",
+    "prompt": "Use case: product-mockup. Create one high-end photorealistic ecommerce studio PRODUCT PHOTOGRAPH of unisex sand-beige tailored straight-leg cotton trousers, waistband and both complete legs visible. Full garment alone, centered and entirely visible, front view, natural ghost-mannequin shape without visible mannequin. Warm light gray seamless backdrop, subtle soft shadow. Portrait 4:5 composition, product fills 75 percent of frame. Authentic fine surface texture, real seams and convincing materials, soft diffused daylight. No person, no accessories, no hanger, no typography, no logos, no illustration, no vector art, no collage. This is a representative category photograph for a synthetic clothing store.",
+    "generator": "built-in image_gen",
+    "file": "trousers.png",
+    "served_file": "trousers.jpg"
+  },
+  {
+    "id": "jeans",
+    "subject": "unisex medium blue straight-leg denim jeans, realistic faded indigo denim, five pockets, complete waistband and both legs",
+    "color": "blue",
+    "source": "/Users/ajaybabum/Documents/Codex/2026-10-16/task/generated_images/exec-8772181b-8fe8-4041-9675-c0bf62d54074.png",
+    "prompt": "Use case: product-mockup. Create one high-end photorealistic ecommerce studio PRODUCT PHOTOGRAPH of unisex medium blue straight-leg denim jeans, realistic faded indigo denim, five pockets, complete waistband and both legs. Full garment alone, centered and entirely visible, front view, natural ghost-mannequin shape without visible mannequin. Warm light gray seamless backdrop, subtle soft shadow. Portrait 4:5 composition, product fills 75 percent of frame. Authentic fine surface texture, real seams and convincing materials, soft diffused daylight. No person, no accessories, no hanger, no typography, no logos, no illustration, no vector art, no collage. This is a representative category photograph for a synthetic clothing store.",
+    "generator": "built-in image_gen",
+    "file": "jeans.png",
+    "served_file": "jeans.jpg"
+  },
+  {
+    "id": "jackets",
+    "subject": "unisex olive-green cotton canvas utility jacket, four pockets, collar, long sleeves",
+    "color": "olive",
+    "source": "/Users/ajaybabum/Documents/Codex/2026-10-16/task/generated_images/exec-ad8a531e-4c74-4889-b44f-c6b717b9c3bd.png",
+    "prompt": "Use case: product-mockup. Create one high-end photorealistic ecommerce studio PRODUCT PHOTOGRAPH of unisex olive-green cotton canvas utility jacket, four pockets, collar, long sleeves. Full garment alone, centered and entirely visible, front view, natural ghost-mannequin shape without visible mannequin. Warm light gray seamless backdrop, subtle soft shadow. Portrait 4:5 composition, product fills 75 percent of frame. Authentic fine surface texture, real seams and convincing materials, soft diffused daylight. No person, no accessories, no hanger, no typography, no logos, no illustration, no vector art, no collage. This is a representative category photograph for a synthetic clothing store.",
+    "generator": "built-in image_gen",
+    "file": "jackets.png",
+    "served_file": "jackets.jpg"
+  },
+  {
+    "id": "shorts",
+    "subject": "men's sand-beige tailored cotton chino shorts, front pockets, waistband, knee-length",
+    "color": "sand",
+    "source": "/Users/ajaybabum/Documents/Codex/2026-10-16/task/generated_images/exec-83678345-a0d4-4cad-b92d-3ffe6a1fc108.png",
+    "prompt": "Use case: product-mockup. Create one high-end photorealistic ecommerce studio PRODUCT PHOTOGRAPH of men's sand-beige tailored cotton chino shorts, front pockets, waistband, knee-length. Full garment alone, centered and entirely visible, front view, natural ghost-mannequin shape without visible mannequin. Warm light gray seamless backdrop, subtle soft shadow. Portrait 4:5 composition, product fills 75 percent of frame. Authentic fine surface texture, real seams and convincing materials, soft diffused daylight. No person, no accessories, no hanger, no typography, no logos, no illustration, no vector art, no collage. This is a representative category photograph for a synthetic clothing store.",
+    "generator": "built-in image_gen",
+    "file": "shorts.png",
+    "served_file": "shorts.jpg"
+  },
+  {
+    "id": "activewear",
+    "subject": "men's navy blue short-sleeve technical athletic training shirt, subtle breathable performance fabric, crew neck",
+    "color": "navy",
+    "source": "/Users/ajaybabum/Documents/Codex/2026-10-16/task/generated_images/exec-f41fa178-ca35-448b-86a4-5b5f238fa6a8.png",
+    "prompt": "Use case: product-mockup. Create one high-end photorealistic ecommerce studio PRODUCT PHOTOGRAPH of men's navy blue short-sleeve technical athletic training shirt, subtle breathable performance fabric, crew neck. Full garment alone, centered and entirely visible, front view, natural ghost-mannequin shape without visible mannequin. Warm light gray seamless backdrop, subtle soft shadow. Portrait 4:5 composition, product fills 75 percent of frame. Authentic fine surface texture, real seams and convincing materials, soft diffused daylight. No person, no accessories, no hanger, no typography, no logos, no illustration, no vector art, no collage. This is a representative category photograph for a synthetic clothing store.",
+    "generator": "built-in image_gen",
+    "file": "activewear.png",
+    "served_file": "activewear.jpg"
+  },
+  {
+    "id": "dresses",
+    "subject": "women's rose pink linen midi wrap dress, short sleeves, tied waist, entire dress and hem visible",
+    "color": "rose",
+    "source": "/Users/ajaybabum/Documents/Codex/2026-10-16/task/generated_images/exec-b7f73f27-6d36-4687-ab29-70a6b8bfc8b0.png",
+    "prompt": "Use case: product-mockup. Create one high-end photorealistic ecommerce studio PRODUCT PHOTOGRAPH of women's rose pink linen midi wrap dress, short sleeves, tied waist, entire dress and hem visible. Full garment alone, centered and entirely visible, front view, natural ghost-mannequin shape without visible mannequin. Warm light gray seamless backdrop, subtle soft shadow. Portrait 4:5 composition, product fills 75 percent of frame. Authentic fine surface texture, real seams and convincing materials, soft diffused daylight. No person, no accessories, no hanger, no typography, no logos, no illustration, no vector art, no collage. This is a representative category photograph for a synthetic clothing store.",
+    "generator": "built-in image_gen",
+    "file": "dresses.png",
+    "served_file": "dresses.jpg"
+  },
+  {
+    "id": "skirts",
+    "subject": "women's sand-beige A-line cotton midi skirt, fitted waistband and entire hem visible",
+    "color": "sand",
+    "source": "/Users/ajaybabum/Documents/Codex/2026-10-16/task/generated_images/exec-cc7c7fe8-eb1b-486e-bcc5-7ee1b7b30dd0.png",
+    "prompt": "Use case: product-mockup. Create one high-end photorealistic ecommerce studio PRODUCT PHOTOGRAPH of women's sand-beige A-line cotton midi skirt, fitted waistband and entire hem visible. Full garment alone, centered and entirely visible, front view, natural ghost-mannequin shape without visible mannequin. Warm light gray seamless backdrop, subtle soft shadow. Portrait 4:5 composition, product fills 75 percent of frame. Authentic fine surface texture, real seams and convincing materials, soft diffused daylight. No person, no accessories, no hanger, no typography, no logos, no illustration, no vector art, no collage. This is a representative category photograph for a synthetic clothing store.",
+    "generator": "built-in image_gen",
+    "file": "skirts.png",
+    "served_file": "skirts.jpg"
+  },
+  {
+    "id": "sneakers",
+    "subject": "a pair of unisex clean white leather low-top lace-up sneakers, white rubber cupsoles, no branding",
+    "color": "white",
+    "source": "/Users/ajaybabum/Documents/Codex/2026-10-16/task/generated_images/exec-c2fb0eb8-971b-43b1-8a59-06a32d5744bf.png",
+    "prompt": "Use case: product-mockup. Create one high-end photorealistic ecommerce studio PRODUCT PHOTOGRAPH of a pair of unisex clean white leather low-top lace-up sneakers, white rubber cupsoles, no branding. Both shoes entirely visible in a tasteful three-quarter side view, pair arranged diagonally. Warm light gray seamless backdrop, subtle soft shadow. Portrait 4:5 composition, product fills 75 percent of frame. Authentic fine surface texture, real seams and convincing materials, soft diffused daylight. No person, no accessories, no hanger, no typography, no logos, no illustration, no vector art, no collage. This is a representative category photograph for a synthetic clothing store.",
+    "generator": "built-in image_gen",
+    "file": "sneakers.png",
+    "served_file": "sneakers.jpg"
+  },
+  {
+    "id": "loafers",
+    "subject": "a pair of unisex dark brown leather penny loafers with low heels and visible natural leather grain",
+    "color": "brown",
+    "source": "/Users/ajaybabum/Documents/Codex/2026-10-16/task/generated_images/exec-f7a1dc02-a0d6-43cc-9c03-59a535b9f50c.png",
+    "prompt": "Use case: product-mockup. Create one high-end photorealistic ecommerce studio PRODUCT PHOTOGRAPH of a pair of unisex dark brown leather penny loafers with low heels and visible natural leather grain. Both shoes entirely visible in a tasteful three-quarter side view, pair arranged diagonally. Warm light gray seamless backdrop, subtle soft shadow. Portrait 4:5 composition, product fills 75 percent of frame. Authentic fine surface texture, real seams and convincing materials, soft diffused daylight. No person, no accessories, no hanger, no typography, no logos, no illustration, no vector art, no collage. This is a representative category photograph for a synthetic clothing store.",
+    "generator": "built-in image_gen",
+    "file": "loafers.png",
+    "served_file": "loafers.jpg"
+  },
+  {
+    "id": "boots",
+    "subject": "a pair of unisex black leather ankle boots with elastic Chelsea side panels, substantial rubber soles",
+    "color": "black",
+    "source": "/Users/ajaybabum/Documents/Codex/2026-10-16/task/generated_images/exec-1df6886c-d26a-4a7f-ba5e-8e71d3ccd9f6.png",
+    "prompt": "Use case: product-mockup. Create one high-end photorealistic ecommerce studio PRODUCT PHOTOGRAPH of a pair of unisex black leather ankle boots with elastic Chelsea side panels, substantial rubber soles. Both shoes entirely visible in a tasteful three-quarter side view, pair arranged diagonally. Warm light gray seamless backdrop, subtle soft shadow. Portrait 4:5 composition, product fills 75 percent of frame. Authentic fine surface texture, real seams and convincing materials, soft diffused daylight. No person, no accessories, no hanger, no typography, no logos, no illustration, no vector art, no collage. This is a representative category photograph for a synthetic clothing store.",
+    "generator": "built-in image_gen",
+    "file": "boots.png",
+    "served_file": "boots.jpg"
+  },
+  {
+    "id": "sandals",
+    "subject": "a pair of unisex brown leather two-strap open-toe flat sandals, cork footbeds",
+    "color": "brown",
+    "source": "/Users/ajaybabum/Documents/Codex/2026-10-16/task/generated_images/exec-5b5bd48f-6a25-4d07-82b7-94e04427fc75.png",
+    "prompt": "Use case: product-mockup. Create one high-end photorealistic ecommerce studio PRODUCT PHOTOGRAPH of a pair of unisex brown leather two-strap open-toe flat sandals, cork footbeds. Both shoes entirely visible in a tasteful three-quarter side view, pair arranged diagonally. Warm light gray seamless backdrop, subtle soft shadow. Portrait 4:5 composition, product fills 75 percent of frame. Authentic fine surface texture, real seams and convincing materials, soft diffused daylight. No person, no accessories, no hanger, no typography, no logos, no illustration, no vector art, no collage. This is a representative category photograph for a synthetic clothing store.",
+    "generator": "built-in image_gen",
+    "file": "sandals.png",
+    "served_file": "sandals.jpg"
+  },
+  {
+    "id": "runners",
+    "subject": "a pair of unisex navy blue technical mesh running shoes, cushioned white foam soles, laces",
+    "color": "navy",
+    "source": "/Users/ajaybabum/Documents/Codex/2026-10-16/task/generated_images/exec-d53c1b8b-54c9-433f-ae5a-1e5aee1bfcc8.png",
+    "prompt": "Use case: product-mockup. Create one high-end photorealistic ecommerce studio PRODUCT PHOTOGRAPH of a pair of unisex navy blue technical mesh running shoes, cushioned white foam soles, laces. Both shoes entirely visible in a tasteful three-quarter side view, pair arranged diagonally. Warm light gray seamless backdrop, subtle soft shadow. Portrait 4:5 composition, product fills 75 percent of frame. Authentic fine surface texture, real seams and convincing materials, soft diffused daylight. No person, no accessories, no hanger, no typography, no logos, no illustration, no vector art, no collage. This is a representative category photograph for a synthetic clothing store.",
+    "generator": "built-in image_gen",
+    "file": "runners.png",
+    "served_file": "runners.jpg"
+  },
+  {
+    "id": "heels",
+    "subject": "a pair of women's black leather pointed-toe closed pumps, elegant moderate block heels",
+    "color": "black",
+    "source": "/Users/ajaybabum/Documents/Codex/2026-10-16/task/generated_images/exec-b9bdd9db-e0a4-4254-8019-84150c618ae9.png",
+    "prompt": "Use case: product-mockup. Create one high-end photorealistic ecommerce studio PRODUCT PHOTOGRAPH of a pair of women's black leather pointed-toe closed pumps, elegant moderate block heels. Both shoes entirely visible in a tasteful three-quarter side view, pair arranged diagonally. Warm light gray seamless backdrop, subtle soft shadow. Portrait 4:5 composition, product fills 75 percent of frame. Authentic fine surface texture, real seams and convincing materials, soft diffused daylight. No person, no accessories, no hanger, no typography, no logos, no illustration, no vector art, no collage. This is a representative category photograph for a synthetic clothing store.",
+    "generator": "built-in image_gen",
+    "file": "heels.png",
+    "served_file": "heels.jpg"
+  }
+]

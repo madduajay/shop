@@ -1,0 +1,52 @@
+// Disposable headless UI verification. No personal browser profile or cookie writes.
+const fs=require('node:fs'),os=require('node:os'),path=require('node:path'),cp=require('node:child_process');
+const base=process.argv[2],out=process.argv[3];if(!/^https:\/\/atlas\.localhost:854[35]$/.test(base))throw Error('Local demo only');
+const allowed=new Set([base,base.replace('atlas.','jacket.')]);const dir=fs.mkdtempSync(path.join(os.tmpdir(),'thread3-ui-check-'));let chrome,ws,id=0,sid;const pending=new Map();
+const delay=ms=>new Promise(r=>setTimeout(r,ms));
+function cmd(method,params={},session=sid){return new Promise((resolve,reject)=>{const n=++id,timer=setTimeout(()=>reject(Error(method+' timeout')),30000);pending.set(n,{resolve,reject,timer});ws.send(JSON.stringify({id:n,method,params,...(session?{sessionId:session}:{})}))})}
+async function ev(expression,session=sid){const r=await cmd('Runtime.evaluate',{expression,awaitPromise:true,returnByValue:true,userGesture:true},session);if(r.exceptionDetails)throw Error('UI evaluation failed: '+expression.slice(0,150)+' '+JSON.stringify(r.exceptionDetails));return r.result.value}
+async function until(expression){for(let i=0;i<300;i++){if(await ev(expression))return;await delay(100)}throw Error('UI state timeout')}
+async function chat(text){const before=await ev("document.querySelectorAll('.assistant').length");await ev(`(()=>{document.querySelector('#text').value=${JSON.stringify(text)};document.querySelector('#chat').requestSubmit()})()`);await until(`document.querySelectorAll('.assistant').length>${before} && document.querySelector('#status').textContent===''`);return ev("({reply:[...document.querySelectorAll('.assistant')].at(-1)?.textContent,identity:document.querySelector('#identity').textContent,cards:[...document.querySelectorAll('.card')].map(e=>({name:e.querySelector('h3').textContent,explanation:e.querySelector('.explanation').textContent,source:[...e.querySelectorAll('small')].at(-1).textContent}))})")}
+async function shot(name){await ev(name.includes('json')?"[...document.querySelectorAll('.preference-json')].at(-1).scrollIntoView({block:'center'})":(name.includes('guest-bag')||name.includes('review-address')||name.includes('add-signin'))?"[...document.querySelectorAll('.assistant')].at(-1).scrollIntoView({block:'center'})":name.includes('explanations')?"[...document.querySelectorAll('.cards')].at(-1).scrollIntoView({block:'start'})":"document.querySelector('#messages').scrollIntoView({block:'start'})");await delay(200);const x=await cmd('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(out,name),Buffer.from(x.data,'base64'))}
+(async()=>{const report=[];try{
+ chrome=cp.spawn('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',['--headless=new','--remote-debugging-port=0','--user-data-dir='+dir,'--no-first-run','--no-default-browser-check','--disable-background-networking','--disable-sync','--disable-extensions','about:blank'],{stdio:'ignore'});
+ let address;for(let i=0;i<100;i++){try{address=fs.readFileSync(path.join(dir,'DevToolsActivePort'),'utf8').trim().split('\n');break}catch{}await delay(100)}
+ ws=new WebSocket('ws://127.0.0.1:'+address[0]+address[1]);await new Promise((r,j)=>{ws.onopen=r;ws.onerror=j});ws.onmessage=({data})=>{const m=JSON.parse(data);if(m.id){const p=pending.get(m.id);if(p){clearTimeout(p.timer);pending.delete(m.id);m.error?p.reject(Error(m.error.message)):p.resolve(m.result)}}};
+ const ctx=(await cmd('Target.createBrowserContext',{},null)).browserContextId;const target=(await cmd('Target.createTarget',{url:'about:blank',browserContextId:ctx},null)).targetId;sid=(await cmd('Target.attachToTarget',{targetId:target,flatten:true},null)).sessionId;
+ await cmd('Page.enable');await cmd('Runtime.enable');await cmd('Emulation.setDeviceMetricsOverride',{width:1180,height:1300,deviceScaleFactor:1,mobile:false});await cmd('Page.navigate',{url:base+'/'});await until("!!document.querySelector('#thread-login')");
+ const loginShot=await cmd('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(out,'thread-login.png'),Buffer.from(loginShot.data,'base64'));
+ async function login(number){await ev(`(()=>{const f=document.querySelector('#thread-login');f.elements.email.value='customer${String(number).padStart(3,'0')}@thread.local';f.elements.password.value='wardrobe';f.requestSubmit()})()`);await until("!!document.querySelector('#chat') && document.querySelector('#identity').textContent.includes('"+String(number).padStart(3,'0')+"')")}
+ await login(1);
+ for(const q of ['who is the current logged in user','what is the weather','switch to customer 2','who am I','am I logged in','which customer is selected']){
+  const r=await chat(q);report.push({query:q,...r});if(q==='what is the weather'&&r.reply!=='Sorry i am not sure how to handle this request')throw Error('Unsupported message contract');if(!q.startsWith('switch')&&r.cards.length)throw Error('Status or unknown query produced products');
+ }
+ await shot('thread-identity.png');if(process.env.IDENTITY_ONLY==='1'){fs.writeFileSync(path.join(out,'live-thread-identity.json'),JSON.stringify(report,null,2));console.log(JSON.stringify({identity_checks:report.length,unsupported_message:'verified exact',customer_switching:true}));return}
+ const found=await chat("find women's dresses");report.push({query:'find women dresses',...found});if(!found.cards.length||found.cards.some(x=>!x.explanation))throw Error('Missing explanations');await shot('thread-explanations.png');fs.writeFileSync(path.join(out,'thread-ui-partial.json'),JSON.stringify(report,null,2));
+ if(await ev("document.querySelector('.card').tagName==='A' || !!document.querySelector('.card a')"))throw Error('Product navigates away');await ev("document.querySelector('.card img').click()");await until("document.querySelector('#product-dialog').open");if(!(await ev("location.origin==="+JSON.stringify(base))))throw Error('Left Thread');await ev("document.querySelector('#product-add').click()");await until("!!document.querySelector('#auth button') && document.querySelector('#status').textContent===''");await shot('thread-add-signin.png');await ev("document.querySelector('#auth button').click()");
+ let popup;for(let i=0;i<50;i++){const ts=(await cmd('Target.getTargets',{},null)).targetInfos;popup=ts.find(x=>x.url.startsWith(base.replace('atlas.','jacket.')+'/signin?'));if(popup)break;await delay(100)}if(!popup)throw Error('Sign-in popup missing');
+ const ps=(await cmd('Target.attachToTarget',{targetId:popup.targetId,flatten:true},null)).sessionId;
+ await ev("(()=>{const f=document.querySelector('form');f.elements.password.value='wardrobe';f.requestSubmit()})()",ps);
+ await until("!document.querySelector('#auth button')");
+ // Independent ordinary storefront tab, sharing only the company account identity.
+ const threadSid=sid;const regularTarget=(await cmd('Target.createTarget',{url:'about:blank',browserContextId:ctx},null)).targetId;
+ const regularSid=(await cmd('Target.attachToTarget',{targetId:regularTarget,flatten:true},null)).sessionId;sid=regularSid;
+ await cmd('Page.enable');await cmd('Runtime.enable');await cmd('Page.navigate',{url:base.replace('atlas.','jacket.')+'/shop/login?return_to=/shop/cart'});
+ await until("!!document.querySelector('[data-shop-action=login]')");await ev("(()=>{const f=document.querySelector('[data-shop-action=login]');f.elements.email.value='customer001@forme.local';f.elements.password.value='wardrobe';f.requestSubmit()})()");
+ await until("!!document.querySelector('[data-login-return]')");await ev("document.querySelector('[data-login-return]').click()");await until("!!document.querySelector('[data-cart-item]')");
+ const regularBefore=await ev("[...document.querySelectorAll('[data-cart-item]')].map(e=>({...e.dataset}))");if(regularBefore.length!==1||regularBefore[0].quantity!=='1')throw Error('Thread addition missing from ordinary browser');
+ await ev("(()=>{const f=document.querySelector('[data-shop-action=cart-update]');f.elements.quantity.value='2';f.requestSubmit()})()");await until("document.querySelector('[data-cart-item]')?.dataset.quantity==='2'");
+ const regularShot=await cmd('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(out,'shared-cart-ordinary-browser.png'),Buffer.from(regularShot.data,'base64'));
+ sid=threadSid;const bag=await chat('show my bag');if(!bag.reply.includes('× 2'))throw Error('Ordinary browser edit missing from Thread');
+ await ev("document.querySelector('#clear-chat').click();document.querySelector('#confirm-clear').click()");await until("!document.querySelector('#clear-dialog').open && document.querySelectorAll('.msg').length===1");
+ await ev("document.querySelector('#logout').click()");await until("!!document.querySelector('#thread-login')");await login(1);
+ const reconnect=await chat('what is in my bag?');if(!reconnect.reply.includes('Sign in')||reconnect.reply.includes('empty'))throw Error('Fresh conversation failed saved bag recovery');
+ await ev("document.querySelector('#auth button').click()");let reconnectPopup;
+ for(let i=0;i<50;i++){reconnectPopup=(await cmd('Target.getTargets',{},null)).targetInfos.find(x=>x.url.startsWith(base.replace('atlas.','jacket.')+'/signin?'));if(reconnectPopup)break;await delay(100)}
+ if(!reconnectPopup)throw Error('Recovery popup missing');const rs=(await cmd('Target.attachToTarget',{targetId:reconnectPopup.targetId,flatten:true},null)).sessionId;
+ await ev("(()=>{const f=document.querySelector('form');if(f.elements.password)f.elements.password.value='wardrobe';f.requestSubmit()})()",rs);
+ await until("!document.querySelector('#auth button') && [...document.querySelectorAll('.assistant')].at(-1).textContent.includes('× 2')");
+ const recovered=await ev("[...document.querySelectorAll('.assistant')].at(-1).textContent");if(recovered.includes('I approve this order'))throw Error('Read bag created checkout review');
+ report.push({query:'shared cart recovery',ordinary_browser_saw_thread_add:true,thread_saw_ordinary_quantity:2,fresh_flow_reconnected:true,read_only:true});
+ fs.writeFileSync(path.join(out,'shared-cart-browser-ui.json'),JSON.stringify(report.at(-1),null,2));
+ console.log(JSON.stringify(report.at(-1)));
+ }finally{if(ws){try{await cmd('Browser.close',{},null)}catch{}ws.close()}if(chrome)chrome.kill();await delay(300);fs.rmSync(dir,{recursive:true,force:true})}})().catch(e=>{console.error(e.message);process.exitCode=1});

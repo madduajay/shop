@@ -1,0 +1,191 @@
+[
+  {
+    "id": "blue-shirt",
+    "color": "blue",
+    "category": "shirts",
+    "name": "Classic blue cotton button-down shirt",
+    "source": "/Users/ajaybabum/Documents/Codex/2026-10-16/task/generated_images/exec-2275d64b-51ff-4a15-bc2b-978586193be2.png",
+    "prompt": "Use case: product-mockup. One photorealistic premium ecommerce studio PRODUCT PHOTOGRAPH of unisex light-to-medium BLUE cotton button-down collared shirt, long sleeves, single breast pocket. Full garment alone, front view, centered and entirely visible with generous margins, natural ghost-mannequin shape without a visible mannequin. Warm light gray seamless background, subtle soft contact shadow, portrait 4:5 composition, detailed realistic textile fibers or leather grain and seams, soft diffused daylight. Precise stated color and silhouette are critical because the store's product metadata must match this photo. No people, no accessories, no text, no logos, no border, no collage, no illustration. Contemporary style-inspired merchandise, no claim of geographic manufacture or cultural authenticity.",
+    "served_file": "assets/photos/blue-shirt.jpg"
+  },
+  {
+    "id": "blue-blouse",
+    "color": "blue",
+    "category": "blouses",
+    "name": "Blue cotton blouse",
+    "source": "/Users/ajaybabum/Documents/Codex/2026-10-16/task/generated_images/exec-dc1245e9-b5e2-4321-b026-b9dcd5e15ff3.png",
+    "prompt": "Use case: product-mockup. One photorealistic premium ecommerce studio PRODUCT PHOTOGRAPH of women's medium BLUE cotton collared button-front blouse, long sleeves. Full garment alone, front view, centered and entirely visible with generous margins, natural ghost-mannequin shape without a visible mannequin. Warm light gray seamless background, subtle soft contact shadow, portrait 4:5 composition, detailed realistic textile fibers or leather grain and seams, soft diffused daylight. Precise stated color and silhouette are critical because the store's product metadata must match this photo. No people, no accessories, no text, no logos, no border, no collage, no illustration. Contemporary style-inspired merchandise, no claim of geographic manufacture or cultural authenticity.",
+    "served_file": "assets/photos/blue-blouse.jpg"
+  },
+  {
+    "id": "black-jeans",
+    "color": "black",
+    "category": "jeans",
+    "name": "Black straight jeans",
+    "source": "/Users/ajaybabum/Documents/Codex/2026-10-16/task/generated_images/exec-cc25ab49-35e3-4c05-91b7-8d429a6c4a4d.png",
+    "prompt": "Use case: product-mockup. One photorealistic premium ecommerce studio PRODUCT PHOTOGRAPH of unisex BLACK straight-leg denim jeans, complete waistband and both legs visible. Full garment alone, front view, centered and entirely visible with generous margins, natural ghost-mannequin shape without a visible mannequin. Warm light gray seamless background, subtle soft contact shadow, portrait 4:5 composition, detailed realistic textile fibers or leather grain and seams, soft diffused daylight. Precise stated color and silhouette are critical because the store's product metadata must match this photo. No people, no accessories, no text, no logos, no border, no collage, no illustration. Contemporary style-inspired merchandise, no claim of geographic manufacture or cultural authenticity.",
+    "served_file": "assets/photos/black-jeans.jpg"
+  },
+  {
+    "id": "navy-jeans",
+    "color": "navy",
+    "category": "jeans",
+    "name": "Indigo straight jeans",
+    "source": "/Users/ajaybabum/Documents/Codex/2026-10-16/task/generated_images/exec-5cd9b742-f82f-4abe-aac1-59831ad22abb.png",
+    "prompt": "Use case: product-mockup. One photorealistic premium ecommerce studio PRODUCT PHOTOGRAPH of unisex very dark NAVY indigo straight-leg denim jeans, complete waistband and both legs visible. Full garment alone, front view, centered and entirely visible with generous margins, natural ghost-mannequin shape without a visible mannequin. Warm light gray seamless background, subtle soft contact shadow, portrait 4:5 composition, detailed realistic textile fibers or leather grain and seams, soft diffused daylight. Precise stated color and silhouette are critical because the store's product metadata must match this photo. No people, no accessories, no text, no logos, no border, no collage, no illustration. Contemporary style-inspired merchandise, no claim of geographic manufacture or cultural authenticity.",
+    "served_file": "assets/photos/navy-jeans.jpg"
+  },
+  {
+    "id": "kurta",
+    "color": "blue",
+    "category": "shirts",
+    "name": "Kurta-inspired tunic",
+    "source": "/Users/ajaybabum/Documents/Codex/2026-10-16/task/generated_images/exec-9fa6c27f-81c0-421e-bd1a-c07cce8abc93.png",
+    "prompt": "Use case: product-mockup. One photorealistic premium ecommerce studio PRODUCT PHOTOGRAPH of unisex BLUE cotton kurta-inspired long tunic, band collar, short button placket, long sleeves, side slits, knee-length. Full garment alone, front view, centered and entirely visible with generous margins, natural ghost-mannequin shape without a visible mannequin. Warm light gray seamless background, subtle soft contact shadow, portrait 4:5 composition, detailed realistic textile fibers or leather grain and seams, soft diffused daylight. Precise stated color and silhouette are critical because the store's product metadata must match this photo. No people, no accessories, no text, no logos, no border, no collage, no illustration. Contemporary style-inspired merchandise, no claim of geographic manufacture or cultural authenticity.",
+    "served_file": "assets/photos/kurta.jpg"
+  },
+  {
+    "id": "haori",
+    "color": "navy",
+    "category": "jackets",
+    "name": "Haori-inspired jacket",
+    "source": "/Users/ajaybabum/Documents/Codex/2026-10-16/task/generated_images/exec-7b53b8fb-f99b-4f78-9485-6f141b90110b.png",
+    "prompt": "Use case: product-mockup. One photorealistic premium ecommerce studio PRODUCT PHOTOGRAPH of unisex solid NAVY cotton haori-inspired open-front hip-length jacket with wide rectangular sleeves, simple straight lapel bands. Full garment alone, front view, centered and entirely visible with generous margins, natural ghost-mannequin shape without a visible mannequin. Warm light gray seamless background, subtle soft contact shadow, portrait 4:5 composition, detailed realistic textile fibers or leather grain and seams, soft diffused daylight. Precise stated color and silhouette are critical because the store's product metadata must match this photo. No people, no accessories, no text, no logos, no border, no collage, no illustration. Contemporary style-inspired merchandise, no claim of geographic manufacture or cultural authenticity.",
+    "served_file": "assets/photos/haori.jpg"
+  },
+  {
+    "id": "guayabera",
+    "color": "white",
+    "category": "shirts",
+    "name": "Guayabera-inspired shirt",
+    "source": "/Users/ajaybabum/Documents/Codex/2026-10-16/task/generated_images/exec-1dae1fec-f48f-4bbf-9c03-87c4c370d0b1.png",
+    "prompt": "Use case: product-mockup. One photorealistic premium ecommerce studio PRODUCT PHOTOGRAPH of men's WHITE linen guayabera-inspired short-sleeve shirt, four patch pockets and two vertical fine pintuck panels, pointed collar. Full garment alone, front view, centered and entirely visible with generous margins, natural ghost-mannequin shape without a visible mannequin. Warm light gray seamless background, subtle soft contact shadow, portrait 4:5 composition, detailed realistic textile fibers or leather grain and seams, soft diffused daylight. Precise stated color and silhouette are critical because the store's product metadata must match this photo. No people, no accessories, no text, no logos, no border, no collage, no illustration. Contemporary style-inspired merchandise, no claim of geographic manufacture or cultural authenticity.",
+    "served_file": "assets/photos/guayabera.jpg"
+  },
+  {
+    "id": "barong",
+    "color": "white",
+    "category": "shirts",
+    "name": "Barong-inspired shirt",
+    "source": "/Users/ajaybabum/Documents/Codex/2026-10-16/task/generated_images/exec-96c09913-f2a1-4d51-b38f-ecefacb997e6.png",
+    "prompt": "Use case: product-mockup. One photorealistic premium ecommerce studio PRODUCT PHOTOGRAPH of men's WHITE lightweight linen barong-inspired long-sleeve shirt, subtle tonal floral embroidery down the front, pointed collar, straight hem. Full garment alone, front view, centered and entirely visible with generous margins, natural ghost-mannequin shape without a visible mannequin. Warm light gray seamless background, subtle soft contact shadow, portrait 4:5 composition, detailed realistic textile fibers or leather grain and seams, soft diffused daylight. Precise stated color and silhouette are critical because the store's product metadata must match this photo. No people, no accessories, no text, no logos, no border, no collage, no illustration. Contemporary style-inspired merchandise, no claim of geographic manufacture or cultural authenticity.",
+    "served_file": "assets/photos/barong.jpg"
+  },
+  {
+    "id": "dashiki",
+    "color": "burgundy",
+    "category": "shirts",
+    "name": "Dashiki-inspired tunic",
+    "source": "/Users/ajaybabum/Documents/Codex/2026-10-16/task/generated_images/exec-447cc8da-8b76-4ac7-8593-485217ed7a60.png",
+    "prompt": "Use case: product-mockup. One photorealistic premium ecommerce studio PRODUCT PHOTOGRAPH of unisex BURGUNDY cotton dashiki-inspired loose short-sleeve tunic, gold geometric embroidery around a notched neckline and sleeve hems, no sacred symbols. Full garment alone, front view, centered and entirely visible with generous margins, natural ghost-mannequin shape without a visible mannequin. Warm light gray seamless background, subtle soft contact shadow, portrait 4:5 composition, detailed realistic textile fibers or leather grain and seams, soft diffused daylight. Precise stated color and silhouette are critical because the store's product metadata must match this photo. No people, no accessories, no text, no logos, no border, no collage, no illustration. Contemporary style-inspired merchandise, no claim of geographic manufacture or cultural authenticity.",
+    "served_file": "assets/photos/dashiki.jpg"
+  },
+  {
+    "id": "kaftan",
+    "color": "olive",
+    "category": "dresses",
+    "name": "Kaftan-inspired dress",
+    "source": "/Users/ajaybabum/Documents/Codex/2026-10-16/task/generated_images/exec-2980ee53-891a-46e8-bd92-a281790e197a.png",
+    "prompt": "Use case: product-mockup. One photorealistic premium ecommerce studio PRODUCT PHOTOGRAPH of women's OLIVE green cotton kaftan-inspired ankle-length dress, loose flowing silhouette, long wide sleeves, subtle ivory braid edging around V neckline. Full garment alone, front view, centered and entirely visible with generous margins, natural ghost-mannequin shape without a visible mannequin. Warm light gray seamless background, subtle soft contact shadow, portrait 4:5 composition, detailed realistic textile fibers or leather grain and seams, soft diffused daylight. Precise stated color and silhouette are critical because the store's product metadata must match this photo. No people, no accessories, no text, no logos, no border, no collage, no illustration. Contemporary style-inspired merchandise, no claim of geographic manufacture or cultural authenticity.",
+    "served_file": "assets/photos/kaftan.jpg"
+  },
+  {
+    "id": "breton",
+    "color": "navy",
+    "category": "tees",
+    "name": "Breton striped top",
+    "source": "/Users/ajaybabum/Documents/Codex/2026-10-16/task/generated_images/exec-a212b674-bc6f-4b94-9041-bc6fa9189750.png",
+    "prompt": "Use case: product-mockup. One photorealistic premium ecommerce studio PRODUCT PHOTOGRAPH of unisex long-sleeve Breton top in ivory cotton with thin NAVY horizontal stripes, boat neckline, straight hem. Full garment alone, front view, centered and entirely visible with generous margins, natural ghost-mannequin shape without a visible mannequin. Warm light gray seamless background, subtle soft contact shadow, portrait 4:5 composition, detailed realistic textile fibers or leather grain and seams, soft diffused daylight. Precise stated color and silhouette are critical because the store's product metadata must match this photo. No people, no accessories, no text, no logos, no border, no collage, no illustration. Contemporary style-inspired merchandise, no claim of geographic manufacture or cultural authenticity.",
+    "served_file": "assets/photos/breton.jpg"
+  },
+  {
+    "id": "fair-isle",
+    "color": "brown",
+    "category": "knitwear",
+    "name": "Fair Isle-inspired knit",
+    "source": "/Users/ajaybabum/Documents/Codex/2026-10-16/task/generated_images/exec-8d8bc762-110d-4201-a118-c400bf3c5ac5.png",
+    "prompt": "Use case: product-mockup. One photorealistic premium ecommerce studio PRODUCT PHOTOGRAPH of unisex BROWN wool crew-neck sweater with cream and charcoal small geometric Fair Isle-inspired yoke pattern, long sleeves. Full garment alone, front view, centered and entirely visible with generous margins, natural ghost-mannequin shape without a visible mannequin. Warm light gray seamless background, subtle soft contact shadow, portrait 4:5 composition, detailed realistic textile fibers or leather grain and seams, soft diffused daylight. Precise stated color and silhouette are critical because the store's product metadata must match this photo. No people, no accessories, no text, no logos, no border, no collage, no illustration. Contemporary style-inspired merchandise, no claim of geographic manufacture or cultural authenticity.",
+    "served_file": "assets/photos/fair-isle.jpg"
+  },
+  {
+    "id": "poncho",
+    "color": "sand",
+    "category": "knitwear",
+    "name": "Andean-inspired poncho",
+    "source": "/Users/ajaybabum/Documents/Codex/2026-10-16/task/generated_images/exec-0b1945eb-2f15-47e2-afda-aa93da728082.png",
+    "prompt": "Use case: product-mockup. One photorealistic premium ecommerce studio PRODUCT PHOTOGRAPH of unisex SAND beige alpaca-wool poncho inspired by Andean rectangular woven silhouettes, subtle brown horizontal border stripes, fringe hem, center V-neck opening. Full garment alone, front view, centered and entirely visible with generous margins, natural ghost-mannequin shape without a visible mannequin. Warm light gray seamless background, subtle soft contact shadow, portrait 4:5 composition, detailed realistic textile fibers or leather grain and seams, soft diffused daylight. Precise stated color and silhouette are critical because the store's product metadata must match this photo. No people, no accessories, no text, no logos, no border, no collage, no illustration. Contemporary style-inspired merchandise, no claim of geographic manufacture or cultural authenticity.",
+    "served_file": "assets/photos/poncho.jpg"
+  },
+  {
+    "id": "espadrilles",
+    "color": "sand",
+    "category": "shoes",
+    "name": "Espadrilles",
+    "source": "/Users/ajaybabum/Documents/Codex/2026-10-16/task/generated_images/exec-fc22482e-936d-45d6-8413-3258ec0ff6ac.png",
+    "prompt": "Use case: product-mockup. One photorealistic premium ecommerce studio PRODUCT PHOTOGRAPH of a pair of unisex SAND beige canvas slip-on espadrilles, clearly visible braided jute rope soles, closed toes. Both shoes entirely visible in a tasteful three-quarter side view, arranged diagonally. Warm light gray seamless background, subtle soft contact shadow, portrait 4:5 composition, detailed realistic textile fibers or leather grain and seams, soft diffused daylight. Precise stated color and silhouette are critical because the store's product metadata must match this photo. No people, no accessories, no text, no logos, no border, no collage, no illustration. Contemporary style-inspired merchandise, no claim of geographic manufacture or cultural authenticity.",
+    "served_file": "assets/photos/espadrilles.jpg"
+  },
+  {
+    "id": "huaraches",
+    "color": "brown",
+    "category": "shoes",
+    "name": "Huarache-inspired sandals",
+    "source": "/Users/ajaybabum/Documents/Codex/2026-10-16/task/generated_images/exec-14503a8a-ca29-4721-9ad3-47430bf769aa.png",
+    "prompt": "Use case: product-mockup. One photorealistic premium ecommerce studio PRODUCT PHOTOGRAPH of a pair of unisex BROWN woven-leather huarache-inspired sandals, intricate interwoven leather strips over the closed toe, flat leather sole. Both shoes entirely visible in a tasteful three-quarter side view, arranged diagonally. Warm light gray seamless background, subtle soft contact shadow, portrait 4:5 composition, detailed realistic textile fibers or leather grain and seams, soft diffused daylight. Precise stated color and silhouette are critical because the store's product metadata must match this photo. No people, no accessories, no text, no logos, no border, no collage, no illustration. Contemporary style-inspired merchandise, no claim of geographic manufacture or cultural authenticity.",
+    "served_file": "assets/photos/huaraches.jpg"
+  },
+  {
+    "id": "babouches",
+    "color": "rose",
+    "category": "shoes",
+    "name": "Babouche-inspired slippers",
+    "source": "/Users/ajaybabum/Documents/Codex/2026-10-16/task/generated_images/exec-28063601-cd79-4003-b8d3-8e15bbae6f2f.png",
+    "prompt": "Use case: product-mockup. One photorealistic premium ecommerce studio PRODUCT PHOTOGRAPH of a pair of unisex dusty ROSE pink soft leather babouche-inspired backless slippers, pointed toes, thin flat soles. Both shoes entirely visible in a tasteful three-quarter side view, arranged diagonally. Warm light gray seamless background, subtle soft contact shadow, portrait 4:5 composition, detailed realistic textile fibers or leather grain and seams, soft diffused daylight. Precise stated color and silhouette are critical because the store's product metadata must match this photo. No people, no accessories, no text, no logos, no border, no collage, no illustration. Contemporary style-inspired merchandise, no claim of geographic manufacture or cultural authenticity.",
+    "served_file": "assets/photos/babouches.jpg"
+  },
+  {
+    "id": "jutti",
+    "color": "burgundy",
+    "category": "shoes",
+    "name": "Jutti-inspired flats",
+    "source": "/Users/ajaybabum/Documents/Codex/2026-10-16/task/generated_images/exec-ccf6712b-6d06-45ab-8efd-75a25c3b7017.png",
+    "prompt": "Use case: product-mockup. One photorealistic premium ecommerce studio PRODUCT PHOTOGRAPH of a pair of unisex BURGUNDY leather jutti-inspired closed flats with gently upturned pointed toes, fine gold geometric embroidery, flat leather sole. Both shoes entirely visible in a tasteful three-quarter side view, arranged diagonally. Warm light gray seamless background, subtle soft contact shadow, portrait 4:5 composition, detailed realistic textile fibers or leather grain and seams, soft diffused daylight. Precise stated color and silhouette are critical because the store's product metadata must match this photo. No people, no accessories, no text, no logos, no border, no collage, no illustration. Contemporary style-inspired merchandise, no claim of geographic manufacture or cultural authenticity.",
+    "served_file": "assets/photos/jutti.jpg"
+  },
+  {
+    "id": "geta",
+    "color": "black",
+    "category": "shoes",
+    "name": "Geta-inspired sandals",
+    "source": "/Users/ajaybabum/Documents/Codex/2026-10-16/task/generated_images/exec-0045175b-7f3c-4c02-b0e3-74a95b8748de.png",
+    "prompt": "Use case: product-mockup. One photorealistic premium ecommerce studio PRODUCT PHOTOGRAPH of a pair of unisex Japanese geta-inspired natural pale wood sandals with two raised wooden supports underneath and BLACK padded V-shaped fabric straps. Both shoes entirely visible in a tasteful three-quarter side view, arranged diagonally. Warm light gray seamless background, subtle soft contact shadow, portrait 4:5 composition, detailed realistic textile fibers or leather grain and seams, soft diffused daylight. Precise stated color and silhouette are critical because the store's product metadata must match this photo. No people, no accessories, no text, no logos, no border, no collage, no illustration. Contemporary style-inspired merchandise, no claim of geographic manufacture or cultural authenticity.",
+    "served_file": "assets/photos/geta.jpg"
+  },
+  {
+    "id": "clogs",
+    "color": "black",
+    "category": "shoes",
+    "name": "Swedish-style clogs",
+    "source": "/Users/ajaybabum/Documents/Codex/2026-10-16/task/generated_images/exec-59ee45f9-e2a2-4794-ad19-c36a4ebe856d.png",
+    "prompt": "Use case: product-mockup. One photorealistic premium ecommerce studio PRODUCT PHOTOGRAPH of a pair of unisex BLACK leather Swedish-style open-back clogs, pale wooden soles and rounded closed toes, small brass studs around the upper. Both shoes entirely visible in a tasteful three-quarter side view, arranged diagonally. Warm light gray seamless background, subtle soft contact shadow, portrait 4:5 composition, detailed realistic textile fibers or leather grain and seams, soft diffused daylight. Precise stated color and silhouette are critical because the store's product metadata must match this photo. No people, no accessories, no text, no logos, no border, no collage, no illustration. Contemporary style-inspired merchandise, no claim of geographic manufacture or cultural authenticity.",
+    "served_file": "assets/photos/clogs.jpg"
+  },
+  {
+    "id": "driving-loafers",
+    "color": "blue",
+    "category": "shoes",
+    "name": "Driving loafers",
+    "source": "/Users/ajaybabum/Documents/Codex/2026-10-16/task/generated_images/exec-4d1a68c2-5900-48e2-a00a-aae818b938bf.png",
+    "prompt": "Use case: product-mockup. One photorealistic premium ecommerce studio PRODUCT PHOTOGRAPH of a pair of unisex BLUE suede Italian-style driving loafers, moccasin toe seam, flexible rubber pebble soles visible at heel. Both shoes entirely visible in a tasteful three-quarter side view, arranged diagonally. Warm light gray seamless background, subtle soft contact shadow, portrait 4:5 composition, detailed realistic textile fibers or leather grain and seams, soft diffused daylight. Precise stated color and silhouette are critical because the store's product metadata must match this photo. No people, no accessories, no text, no logos, no border, no collage, no illustration. Contemporary style-inspired merchandise, no claim of geographic manufacture or cultural authenticity.",
+    "served_file": "assets/photos/driving-loafers.jpg"
+  },
+  {
+    "id": "yemeni",
+    "color": "brown",
+    "category": "shoes",
+    "name": "Yemeni-inspired slippers",
+    "source": "/Users/ajaybabum/Documents/Codex/2026-10-16/task/generated_images/exec-b69e5e10-590e-42e7-bcad-ac0cc002d793.png",
+    "prompt": "Use case: product-mockup. One photorealistic premium ecommerce studio PRODUCT PHOTOGRAPH of a pair of unisex BROWN leather Turkish yemeni-inspired flat slip-on shoes, rounded closed toes, low sides, hand-stitched-looking edging, no decorative embroidery. Both shoes entirely visible in a tasteful three-quarter side view, arranged diagonally. Warm light gray seamless background, subtle soft contact shadow, portrait 4:5 composition, detailed realistic textile fibers or leather grain and seams, soft diffused daylight. Precise stated color and silhouette are critical because the store's product metadata must match this photo. No people, no accessories, no text, no logos, no border, no collage, no illustration. Contemporary style-inspired merchandise, no claim of geographic manufacture or cultural authenticity.",
+    "served_file": "assets/photos/yemeni.jpg"
+  }
+]
